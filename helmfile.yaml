@@ -1,18 +1,32 @@
 
 repositories:
+
   - name: stable
     url: https://charts.helm.sh/stable
+
   - name: devhub
     url: https://devhub.cisco.com/artifactory/asac-dev-helm
     username: '{{ requiredEnv "CEC_USER" }}'
     password: '{{ requiredEnv "DEVHUB_API_KEY" }}'
+
   - name: ci
     url: https://devhub.cisco.com/artifactory/asac-ci-helm
     username: '{{ requiredEnv "CEC_USER" }}'
     password: '{{ requiredEnv "DEVHUB_API_KEY" }}'
+
   - name: autoscaler
     url: https://kubernetes.github.io/autoscaler
+
+  - name: cert-manager
+    url: https://charts.jetstack.io
+
   - name: ingress-nginx
     url: https://kubernetes.github.io/ingress-nginx
 
+
 # releases:
+
+  # - name: ingress-nginx
+  #   chart: ./releases/ingress-nginx
+  #   values: 
+  #     - ./releases/ingress-nginx/defaults.yaml
